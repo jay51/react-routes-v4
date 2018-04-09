@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Route } from "react-router-dom";
+import { NavLink, Route, Redirect } from "react-router-dom";
 // components
 import CSS from "./courses/CSS";
 import HTML from "./courses/HTML";
@@ -17,6 +17,7 @@ const Courses = () => (
     </div>
     
     {/* Write routes here... */}
+    <Route exact path="/courses" render={ ()=> <Redirect to="/courses/html"/>}/>
     <Route path="/courses/html" component={HTML} />
     <Route path="/courses/css" component={CSS} />
     <Route path="/courses/javascript" component={JavaScript} />
@@ -25,3 +26,5 @@ const Courses = () => (
 );
 
 export default Courses;
+
+// clicking the courses NavLink, will Route you to Redirrect to hmtl component
