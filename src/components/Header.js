@@ -14,8 +14,3 @@ const Header = () => (
 );
 
 export default Header;
-
-
-// NavLink by default take the active class.
-// active class will apply on the NavLink when the url matchs. 
-// Note: NavLink only have to match what's inside of "to" unless you add exact prop.
