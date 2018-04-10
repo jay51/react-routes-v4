@@ -14,7 +14,8 @@ const App = () => (
     <div className="container">
       <Header/>
       <Route exact path="/" component={Home}/>
-      <Route path="/about" component={() => <About title="About"/>}/>
+      <Route path="/about" render={() => <About title="About"/>}/> {/*we use render with inline components
+                                                                    and this way we're abale to pass data to the component */}
       <Route path="/teachers" component={Teachers}/>
       <Route path="/courses" component={Courses}/>
       
