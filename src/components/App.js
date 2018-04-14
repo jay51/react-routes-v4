@@ -7,6 +7,7 @@ import About from "./About";
 import Header from "./Header";
 import Teachers from "./Teachers";
 import Courses from "./Courses";
+import Featured from "./Featured";
 import NotFound from "./NotFound";
 
 
@@ -17,7 +18,8 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route path="/about" component={() => <About title="About"/>}/>
-        <Route path="/teachers" component={Teachers}/>
+        <Route exact path="/teachers" component={Teachers}/>
+        <Route path="/teachers/:topic/:fname-:lname?" component={Featured}/>
         <Route path="/courses" component={Courses}/>
         <Route component={NotFound}/>
       </Switch>
@@ -27,5 +29,5 @@ const App = () => (
 
 export default App;
 
-// A route with no path will always render
-// A switch component will render the first path that match,if no match it will render path with no route.
+// ":topic/fname-:lname" are going to be passed as params in the url.
+// use the object "match" that is passed to each Route component to get the url params like so: match.params.fname .

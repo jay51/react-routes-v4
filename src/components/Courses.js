@@ -1,9 +1,11 @@
 import React from 'react';
 import { NavLink, Route, Redirect } from "react-router-dom";
 // components
-import CSS from "./courses/CSS";
-import HTML from "./courses/HTML";
-import JavaScript from './courses/JavaScript';
+// CoursesContainer genrate proper course when passed data props.
+import CoursesContainer from "./courses/CoursesContainer";
+// courses 
+import { HTMLCourses, CSSCourses, JSCourses } from '../data/courses';
+
 
 const Courses = ({match}) => (
   <div className="main-content courses">
@@ -18,16 +20,15 @@ const Courses = ({match}) => (
     
     {/* Write routes here... */}
     <Route exact path={`${match.path}`} render={ ()=> <Redirect to={`${match.path}/html`}/>}/>
-    <Route path={`${match.path}/html`} component={HTML} />
-    <Route path={`${match.path}/css`} component={CSS} />
-    <Route path={`${match.url}/javascript`} component={JavaScript} />
+    <Route path={`${match.path}/html`} render={() => <CoursesContainer data={HTMLCourses} />} />
+    <Route path={`${match.path}/css`} render={()=> <CoursesContainer data={CSSCourses} />} />
+    <Route path={`${match.url}/javascript`} render={()=> <CoursesContainer data={JSCourses} />} />
 
   </div>
 );
 
 export default Courses;
 
-// clicking the courses NavLink, will Route you to Redirrect to hmtl component
-// using match will make our routes more dynamic, such that now if we change the couress url it wont effect sub urls
-// match.url & match.path are exactliy the same, we use url with the url link and path with the route 
 
+// we use render with inline components for better proformince.
+// inside render we can invoke and pass props to a commponent.
