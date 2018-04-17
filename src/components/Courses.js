@@ -27,4 +27,8 @@ const Courses = () => (
 
 export default Courses;
 
+// we include "exact" in the first route beacuse, if you click on the courses link it will take
+// you to this component and since the route match it won't rerender the first route that
+// redirect you to "/courses/html".
+
 // clicking the courses NavLink, will Route you to Redirrect to hmtl component
