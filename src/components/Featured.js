@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Featured = ({match}) => {
-  const name =`${match.params.fname} ${match.params.lname}`;
+  const name =match.params.name;
   const topic = match.params.topic;
 
   return (

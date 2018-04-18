@@ -19,7 +19,7 @@ const App = () => (
         <Route exact path="/" component={Home}/>
         <Route path="/about" component={() => <About title="About"/>}/>
         <Route exact path="/teachers" component={Teachers}/>
-        <Route path="/teachers/:topic/:fname-:lname?" component={Featured}/>
+        <Route path="/teachers/:topic/:name?" component={Featured}/>
         <Route path="/courses" component={Courses}/>
         <Route component={NotFound}/>
       </Switch>
@@ -29,5 +29,3 @@ const App = () => (
 
 export default App;
 
-// ":topic/fname-:lname" are going to be passed as params in the url.
-// use the object "match" that is passed to each Route component to get the url params like so: match.params.fname .

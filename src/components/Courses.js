@@ -1,9 +1,8 @@
 import React from 'react';
 import { NavLink, Route, Redirect } from "react-router-dom";
-// components
-// CoursesContainer genrate proper course when passed data props.
-import CoursesContainer from "./courses/CoursesContainer";
+
 // courses 
+import CoursesContainer from "./courses/CoursesContainer";
 import { HTMLCourses, CSSCourses, JSCourses } from '../data/courses';
 
 
@@ -29,6 +28,3 @@ const Courses = ({match}) => (
 
 export default Courses;
 
-
-// we use render with inline components for better proformince.
-// inside render we can invoke and pass props to a commponent.
